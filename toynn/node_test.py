@@ -1,6 +1,6 @@
 import unittest
-from node import Node, Weight
-from activations import RELU
+from toynn.node import Node, Weight
+from toynn.activations import RELU
 
 class TestNode(unittest.TestCase):
     def test_node(self):

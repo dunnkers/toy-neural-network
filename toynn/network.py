@@ -1,23 +1,11 @@
 import numpy as np
-from activations import Activation, RELU, TANH
-from losses import Loss, SQUARE
-from node import Node, Weight
+from toynn.activations import Activation, RELU, TANH
+from toynn.losses import Loss, SQUARE
+from toynn.node import Node, Weight
 from random import choice
 from itertools import islice
 
-class Layer():
-    def __init__(self, nodes: list[Node]):
-        self.nodes = nodes
-
-    def forward(self, inputs):
-        for node, x in zip(self.nodes, inputs):
-            node.output = x
-
-    def compute(self):
-        for node in self.nodes:
-            node.update_output()
-
-class Network(): # 'Machine'
+class Network():
     def __init__(self,
                     architecture: list[int],
                     activation: Activation = RELU(),

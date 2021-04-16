@@ -1,5 +1,5 @@
 import unittest
-from losses import SQUARE, LOGISTIC
+from toynn.losses import SQUARE, LOGISTIC
 
 class TestActivations(unittest.TestCase):
     def test_square(self):

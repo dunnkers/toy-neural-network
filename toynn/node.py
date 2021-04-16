@@ -1,5 +1,5 @@
 import numpy as np
-from activations import Activation, RELU
+from toynn.activations import Activation, RELU
 
 class Node():
     def __init__(self, activation: Activation = RELU(), bias: float = 0.1):

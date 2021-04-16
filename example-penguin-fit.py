@@ -7,8 +7,8 @@ import numpy as np
 import seaborn as sns
 import sklearn
 import pandas as pd
-from network import Network
-from activations import LINEAR, RELU, SIGMOID, TANH
+from toynn.network import Network
+from toynn.activations import LINEAR, RELU, SIGMOID, TANH
 
 #%%
 penguins = sns.load_dataset('penguins')

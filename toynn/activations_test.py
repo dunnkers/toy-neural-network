@@ -1,5 +1,5 @@
 import unittest
-from activations import RELU, SIGMOID, TANH, LINEAR
+from toynn.activations import RELU, SIGMOID, TANH, LINEAR
 
 class TestActivations(unittest.TestCase):
     def test_relu(self):

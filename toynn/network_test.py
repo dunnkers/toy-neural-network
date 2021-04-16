@@ -1,8 +1,8 @@
 import unittest
-from network import Network, Layer
-from node import Node, Weight
+from toynn.network import Network, Layer
+from toynn.node import Node, Weight
+from toynn.activations import LINEAR, RELU, SIGMOID
 import numpy as np
-from activations import LINEAR, RELU, SIGMOID
 from itertools import cycle
 from random import sample
 from sklearn.datasets import make_classification
