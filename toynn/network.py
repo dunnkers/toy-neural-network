@@ -42,7 +42,7 @@ class Network():
         assert(np.size(targets) == len(output_layer))
         loss = 0
         for node, y in zip(output_layer, targets):
-            loss += self.loss.loss(node.output, y)
+            loss += self.loss.loss(node.totalInput, node.output, y)
         return loss
 
     def forward(self, inputs: list[float]):
@@ -58,7 +58,7 @@ class Network():
 
     def backward(self, target: list[float]):
         for node, yi in zip(self.layers[-1], target):
-            node.outputDer = self.loss.grad(node.output, yi)
+            node.outputDer = self.loss.grad(node.totalInput, node.output, yi)
 
         rng = list(reversed(range(len(self.layers))))[:-1]
         for i in rng:
@@ -112,7 +112,7 @@ class Network():
             loss += self.get_loss(y)
             self.backward(y)
         self.learn(lr=lr)
-        return loss
+        return loss / len(batch)
 
     def fit(self, X: list[list[float]], Y: list[list[float]],
         batch_size=32, lr=0.03, max_epochs=5000,
